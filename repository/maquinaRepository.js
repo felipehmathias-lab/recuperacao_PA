@@ -26,7 +26,7 @@ export async function buscarPorId(id) {
 }
 
 export async function atualizar(id, maquina) {
-    const sql = 'update fornecedores set codigo = ?, nome = ?, setor = ?'
+    const sql = 'update maquinas set codigo = ?, nome = ?, setor = ?'
     const [resultado] = await conexao.execute(
         sql, [maquina.codigo,
             maquina.nome,

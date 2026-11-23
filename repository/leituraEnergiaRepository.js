@@ -18,6 +18,10 @@ export async function listar() {
 }
 
 export async function listarDetalhadas() {
+    const sql = 'select leituras_energia.maquinaId, maquina.nome from maquinas inner join leituras_energia on maquinas.id = leituras_energia.maquina_id'
+    const [resultado] = await conexao.execute(sql)
+
+    return resultado.affectedRows
 }
 
 export async function buscarPorId(id) {
